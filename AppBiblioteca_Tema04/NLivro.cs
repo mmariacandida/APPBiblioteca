@@ -20,7 +20,7 @@ namespace AppBiblioteca_Tema04
         public static void Excluir(Livro l)
         {
             Abrir();
-            livros.Remove(Listar(l.IdGenero));
+            livros.Remove(Listar(l.Id));
             Salvar();
         }
 
@@ -29,7 +29,7 @@ namespace AppBiblioteca_Tema04
             Abrir();
             Livro obj = Listar(l.Id);
             obj.Escritor = l.Escritor;
-            obj.Id = l.Id;
+            obj.IdGenero = l.IdGenero;
             obj.Editora = l.Editora;
             obj.IdGenero = l.IdGenero;
             Salvar();
@@ -45,7 +45,7 @@ namespace AppBiblioteca_Tema04
         {
             foreach (Livro l in livros)
             {
-                if (l.IdGenero == id)
+                if (l.Id == id)
                 {
                     return l;
                 }
@@ -54,10 +54,12 @@ namespace AppBiblioteca_Tema04
             return null;
         }
 
-        internal static void AplicarGenero(Livro l, Genero g)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static void AplicarGenero(Livro l, Genero g)
+        //{
+            //l.IdGenero = g.Id;
+            //Atualizar(l);
+
+        //}
 
         public static List<Livro> Listar(Genero g)
         {
@@ -100,7 +102,7 @@ namespace AppBiblioteca_Tema04
             Abrir();
             Livro obj = Listar(l.Id);
             obj.IdGenero = g.Id;
-            Salvar();
+            Atualizar(obj);
         }
     }
 }

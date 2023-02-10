@@ -24,26 +24,26 @@ namespace AppBiblioteca_Tema04
 
         private void ListarClick(object sender, RoutedEventArgs e)
         {
-            listLivros.ItemsSource = null;
-            listLivros.ItemsSource = NLivro.Listar();
-            listGenero.ItemsSource = null;
-            listGenero.ItemsSource = NGenero.Listar();
-        }
-
-        private void AplicarClick(object sender, RoutedEventArgs e)
-        {
-            if (listLivros.SelectedItem != null &&
-               listGenero.SelectedItem != null)
+            if (listGenero.SelectedItem != null)
             {
-                Livro l = (Livro)listLivros.SelectedItem;
                 Genero g = (Genero)listGenero.SelectedItem;
-                NLivro.AtribuirGenero(l, g);
-                ListarClick(sender, e);
+                if (g != null)
+                {
+                    listLivros.ItemsSource = null;
+                    listLivros.ItemsSource = NLivro.Listar(g); ;
+                }
+                    
             }
             else
             {
-                MessageBox.Show("É preciso selecionar 1 livro e 1 gênero!");
+                listLivros.ItemsSource = null;
+                listLivros.ItemsSource = NLivro.Listar();
+                listGenero.ItemsSource = null;
+                listGenero.ItemsSource = NGenero.Listar();
             }
+            
         }
+
+        
     }
 }

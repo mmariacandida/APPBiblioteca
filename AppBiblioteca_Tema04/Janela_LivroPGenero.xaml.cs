@@ -20,6 +20,10 @@ namespace AppBiblioteca_Tema04
         public Janela_LivroPGenero()
         {
             InitializeComponent();
+            listLivros.ItemsSource = null;
+            listLivros.ItemsSource = NLivro.Listar();
+            listGenero.ItemsSource = null;
+            listGenero.ItemsSource = NGenero.Listar();
         }
 
         private void ListarClick(object sender, RoutedEventArgs e)
@@ -32,16 +36,16 @@ namespace AppBiblioteca_Tema04
 
         private void AplicarClick(object sender, RoutedEventArgs e)
         {
-            if (listLivros.SelectedItem != null &&
-                listGenero.SelectedItem != null)
+            if (listLivros.SelectedItem != null && listGenero.SelectedItem != null)
             {
                 Livro l = (Livro)listLivros.SelectedItem;
                 Genero g = (Genero)listGenero.SelectedItem;
-                NLivro.AplicarGenero(l, g);
+                NLivro.AtribuirGenero(l, g);
                 ListarClick(sender, e);
             }
             else
             {
+                ListarClick(sender, e);
                 MessageBox.Show("É preciso selecionar um livro e um gênero");
             }
         }

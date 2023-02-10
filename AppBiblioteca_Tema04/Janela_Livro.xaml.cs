@@ -53,7 +53,7 @@ namespace AppBiblioteca_Tema04
         private void ExcluirClick(object sender, RoutedEventArgs e)
         {
             Livro l = new Livro();
-            l.IdGenero = int.Parse(txtIdGenero.Text);
+            l.Id = int.Parse(txtId.Text);
             NLivro.Excluir(l);
             ListarClick(sender, e);
         }
