@@ -44,7 +44,9 @@ namespace AppBiblioteca_Tema04
             Exemplar ext = new Exemplar();
             ext.Id = int.Parse(txtIdExemplar.Text);
             ext.IdLivro = int.Parse(txtIdLivro.Text);
-            
+            ext.Codigo = int.Parse(txtCodigo.Text);
+            ext.Localizaçao = int.Parse(txtLoc.Text);
+
             NExemplar.Atualizar(ext);
             ListarClick(sender, e);
         }
@@ -60,10 +62,11 @@ namespace AppBiblioteca_Tema04
         {
             if (listExemplares.SelectedItem != null)
             {
-                Exemplar obj = (Exemplar)listExemplares.SelectedItem;
-                txtIdExemplar.Text = obj.Id.ToString();
-                txtCodigo.Text = obj.Codigo.ToString();
-                txtLoc.Text = obj.Localizaçao.ToString();
+                Exemplar obj = (Exemplar)listExemplares.SelectedItem; if(obj != null){ 
+                    txtIdExemplar.Text = obj.Id.ToString();
+                    txtCodigo.Text = obj.Codigo.ToString();
+                    txtLoc.Text = obj.Localizaçao.ToString();
+                }
             }
         }
     }

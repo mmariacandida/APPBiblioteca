@@ -20,7 +20,7 @@ namespace AppBiblioteca_Tema04
         public static void Excluir(Livro l)
         {
             Abrir();
-            livros.Remove(Listar(l.Id));
+            livros.Remove(Listar(l.IdGenero));
             Salvar();
         }
 
@@ -45,7 +45,7 @@ namespace AppBiblioteca_Tema04
         {
             foreach (Livro l in livros)
             {
-                if (l.Id == id)
+                if (l.IdGenero == id)
                 {
                     return l;
                 }

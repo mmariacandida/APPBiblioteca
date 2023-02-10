@@ -16,7 +16,7 @@ namespace AppBiblioteca_Tema04
 
         public override string ToString()
         {
-            return $"{IdLivro} - {Codigo} - {Localizaçao}";
+            return $"{Id} - {IdLivro} - {Codigo} - {Localizaçao}";
         }
     }
 }
