@@ -27,7 +27,44 @@ namespace AppBiblioteca_Tema04
 
         private void Button_Genero_Click(object sender, RoutedEventArgs e)
         {
+            Janela_Genero w = new Janela_Genero();
+            w.ShowDialog();
+        }
 
+        private void Button_Livro_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_Livro w = new Janela_Livro();
+            w.ShowDialog();
+        }
+
+        private void Button_Exemplar_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_Exemplar w = new Janela_Exemplar();
+            w.ShowDialog();
+        }
+
+        private void Button_CadastroExemplarLivro_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_LivroPGenero w = new Janela_LivroPGenero();
+            w.ShowDialog();
+        }
+
+        private void Button_CadastroLivroGen_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_LivroPGenero w = new Janela_LivroPGenero();
+            w.ShowDialog();
+        }
+
+        private void Button_ListarLivroGen_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_ListarLivrosDoGenero w = new Janela_ListarLivrosDoGenero();
+            w.ShowDialog();
+        }
+
+        private void Button_ListarExemplarLivro_Click(object sender, RoutedEventArgs e)
+        {
+            Janela_ListarExemplaresDoLivro w = new Janela_ListarExemplaresDoLivro();
+            w.ShowDialog();
         }
     }
 }
