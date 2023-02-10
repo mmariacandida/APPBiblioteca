@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppBiblioteca_Tema04"
         mc:Ignorable="d"
-        Title="Janela_ListarLivrosDoGenero" Height="450" Width="800" Background="Black">
+        Title="Janela_ListarLivrosDoGenero" Height="450" Width="800" Background="Darkgreen">
     <Grid>
         <ListBox Name="listLivros" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" Width="370" Height="90"/>
         <ListBox Name="listGenero" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,110,0,0" Width="370" Height="90"/>
